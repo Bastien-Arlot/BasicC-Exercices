@@ -8,7 +8,7 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.exercice7();
+            p.exercice8();
             
         }
         public void exercice1()
@@ -107,5 +107,24 @@ namespace HelloWorld
             Console.WriteLine("you lost the secret number was {0}", secretNumber);  
         }
 
+        public void exercice8()
+        {
+            Console.WriteLine("Enter a series of numbers sperated by comma");
+            string input = Console.ReadLine();
+            var separated = input.Split(',');
+            var max = Convert.ToInt32(separated[0]);
+            
+            foreach (var str in separated)
+            {
+                var number = Convert.ToInt32(str);
+                if(number > max)
+                {
+                    max = number;
+                }
+            }
+
+            Console.WriteLine("Your max number is {0}", max);
+            
+        }
     }
 }
